@@ -47,6 +47,15 @@ private:
 	 * @brief set start value to zero
 	 */
 	void clear();
+    /**
+	 * @brief get Stack Pointer with inline assembly, this function can only be used in get_StackPointer
+	 */
+    int get_SP(void);
+    /**
+	 * @brief get Stack Pointer, this function can be used
+     * @return adress of Stackpointer
+	 */
+    int get_StackPointer(void);
 	int startValue;
     int stopValue;
 };
