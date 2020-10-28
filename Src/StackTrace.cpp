@@ -27,3 +27,13 @@ int StackTrace::getCurrentStackSize()
 {
 	return 0;
 }
+
+int StackTrace::get_SP()
+{
+	asm( "MOV R3, SP" );
+}
+
+int StackTrace::getStackPointer()
+{
+    int a = StackTrace::get_SP();
+}

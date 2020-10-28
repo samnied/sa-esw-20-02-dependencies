@@ -55,7 +55,7 @@ private:
 	 * @brief get Stack Pointer, this function can be used
      * @return adress of Stackpointer
 	 */
-    int get_StackPointer(void);
+    int getStackPointer(void);
 	int startValue;
     int stopValue;
 };
