@@ -25,7 +25,7 @@ int StackTrace::getStackSizeDifference()
 }
 int StackTrace::getCurrentStackSize()
 {
-	return 0;
+	return 0x20018000 - StackTrace::getStackPointer();
 }
 
 int StackTrace::get_SP()
