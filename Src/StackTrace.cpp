@@ -26,7 +26,7 @@ void StackTrace::stop()
     		  current = UART0CTL;
         	  if (current != 0xCD)
         	  {
-        		  StackTrace::stopValue = (0x20018000 - stackB) - i;
+        		  StackTrace::stopValue = (0x20018000 - stackB) - 4 * i;
         		  break;
         	  }
           }
