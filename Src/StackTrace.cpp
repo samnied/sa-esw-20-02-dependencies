@@ -55,3 +55,8 @@ int StackTrace::getStackPointer()
 {
     int a = StackTrace::get_SP();
 }
+
+void StackTrace::setstackB(int a)
+{
+	stackB = a;
+}

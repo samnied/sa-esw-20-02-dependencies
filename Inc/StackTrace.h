@@ -42,6 +42,11 @@ public:
 	 */
 	int getCurrentStackSize();
 
+	/**
+	 * @brief set stackB
+	 */
+	void setstackB(int a);
+
 private:
 	/**
 	 * @brief set start value to zero
