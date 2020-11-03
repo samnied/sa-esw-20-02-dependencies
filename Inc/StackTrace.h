@@ -58,6 +58,7 @@ private:
     int getStackPointer(void);
 	int startValue;
     int stopValue;
+	int stackB = 0;
 };
 
 #endif
