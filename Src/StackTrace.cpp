@@ -9,10 +9,10 @@ void StackTrace::start()
 {
 	clear();
     StackTrace::startValue = StackTrace::getCurrentStackSize();
-    for (int i = StackTrace::startValue - stackB; i >= 0x0; i = i-0x1)
+    for (int i =(0x20018000 - StackTrace::startValue); i >= stackB; i = i-0x4)
         {
-      	  volatile unsigned int& UART0 = *((volatile unsigned int*)stackB);
-      	  volatile unsigned int& UART0CTL = *(&UART0 + i);
+      	  //volatile unsigned int& UART0 = *((volatile unsigned int*)stackB);
+      	  volatile unsigned int& UART0CTL = *((volatile unsigned int*)i);
       	  UART0CTL = 0xCD;
         }
 }
