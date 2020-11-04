@@ -8,8 +8,8 @@ StackTrace::StackTrace()
 void StackTrace::start()
 {
 	clear();
-    StackTrace::startValue = StackTrace::getCurrentStackSize();
-    for (int i =(0x20018000 - StackTrace::startValue); i >= stackB; i = i-0x4)
+    StackTrace::stackStartValue = StackTrace::getCurrentStackSize();
+    for (int i =(0x20018000 - StackTrace::StackStartValue); i >= stackB; i = i-0x4)
         {
       	  //volatile unsigned int& UART0 = *((volatile unsigned int*)stackB);
       	  volatile unsigned int& UART0CTL = *((volatile unsigned int*)i);
@@ -26,7 +26,7 @@ void StackTrace::stop()
     		  current = UART0CTL;
         	  if (current != 0xCD)
         	  {
-        		  StackTrace::StackStopValue = (0x20018000 - 0x2000c000) - 4 * i;
+        		  StackTrace::stackStopValue = (0x20018000 - 0x2000c000) - 4 * i;
         		  break;
         	  }
           }
@@ -34,9 +34,9 @@ void StackTrace::stop()
 
 void StackTrace::clear()
 {
-	StackTrace::startValue = 0;
-    StackTrace::StackStopValue = 0;
-    StackTrace::HeapStopValue = 0;
+	StackTrace::stackStartValue = 0;
+    StackTrace::stackStopValue = 0;
+    StackTrace::heapStopValue = 0;
 }
 
 int StackTrace::getStackSizeDifference()
