@@ -41,7 +41,7 @@ void StackTrace::clear()
 
 int StackTrace::getStackSizeDifference()
 {
-	return StackTrace::stackStopValue - StackTrace::StackStartValue;
+	return StackTrace::stackStopValue - StackTrace::stackStartValue;
 }
 
 int StackTrace::getCurrentStackSize()
