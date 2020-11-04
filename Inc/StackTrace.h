@@ -43,6 +43,12 @@ public:
 	int getCurrentStackSize();
 
 	/**
+    * @brief get maximum Stacksize at point you stopped (you also need start)
+	* @return max stack size at stop point
+	*/
+	int getMaxStackSize();
+
+	/**
 	 * @brief set stackB
 	 */
 	void setstackB(int a);

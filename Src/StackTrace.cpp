@@ -31,18 +31,26 @@ void StackTrace::stop()
         	  }
           }
 }
+
 void StackTrace::clear()
 {
 	StackTrace::startValue = 0;
     StackTrace::stopValue = 0;
 }
+
 int StackTrace::getStackSizeDifference()
 {
 	return StackTrace::stopValue - StackTrace::startValue;
 }
+
 int StackTrace::getCurrentStackSize()
 {
 	return 0x20018000 - StackTrace::getStackPointer();
+}
+
+int StackTrace::getMaxStackSize()
+{
+	return StackTrace::stopValue;
 }
 
 int StackTrace::get_SP()
