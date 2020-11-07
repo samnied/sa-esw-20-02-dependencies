@@ -67,9 +67,14 @@ private:
      * @return adress of Stackpointer
 	 */
     int getStackPointer(void);
-
+    /**
+    	 * @brief get Heap Pointer
+         * @return adress of Heappointer
+    	 */
+    int getHeapPointer(void);
 
 	int stackStartValue;
+	int heapStartValue;
     int stackStopValue;
     int heapStopValue;
 	int stackB;

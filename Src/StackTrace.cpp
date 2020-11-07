@@ -1,4 +1,5 @@
 #include "../Inc/StackTrace.h"
+#include <stdlib.h>
 
 StackTrace::StackTrace()
 {
@@ -9,7 +10,7 @@ void StackTrace::start()
 {
 	clear();
     StackTrace::stackStartValue = StackTrace::getCurrentStackSize();
-    for (int i =(0x20018000 - StackTrace::stackStartValue); i >= stackB; i = i-0x4)
+    for (int i =(0x20018000 - (StackTrace::stackStartValue + 0)); i >= stackB; i = i-0x4)
         {
       	  //volatile unsigned int& UART0 = *((volatile unsigned int*)stackB);
       	  volatile unsigned int& UART0CTL = *((volatile unsigned int*)i);
@@ -19,7 +20,7 @@ void StackTrace::start()
 void StackTrace::stop()
 {
     volatile unsigned int& UART0 = *((volatile unsigned int*)0x2000c000);
-      for (int i = 0x0000; i <= 0xc000; i = i + 0x1)
+      for (int i = 0x0000; i <= (0xc000 - StackTrace::stackStartValue); i = i + 0x1)
           {
         	  volatile unsigned int& UART0CTL = *(&UART0 + i);
         	  unsigned int current;
@@ -52,6 +53,13 @@ int StackTrace::getCurrentStackSize()
 int StackTrace::getMaxStackSize()
 {
 	return StackTrace::stackStopValue;
+}
+
+int StackTrace::getHeapPointer(void)
+{
+	void* a = malloc(sizeof(int));
+	free (a);
+	return (int)a;
 }
 
 int StackTrace::get_SP()
