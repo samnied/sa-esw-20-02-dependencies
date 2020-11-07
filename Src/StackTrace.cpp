@@ -34,14 +34,14 @@ void StackTrace::stop()
         	  }
           }
       //for Heap
-      for (int i = 0x0000; i <= (0xc000 - (0x20018000 - StackTrace::heapStartValue)); i = i - 0x1)
+      for (int i = 0x0000; i <= (0xc000); i = i + 0x1)
                 {
-              	  volatile unsigned int& UART0CTL = *(&UART0 + i);
+              	  volatile unsigned int& UART0CTL = *(&UART0 - i);
               	  unsigned int current;
           		  current = UART0CTL;
               	  if (current != 0xCD)
               	  {
-              		  StackTrace::heapStopValue = (0x2000c000 - StackTrace::heapStartValue) - 4 * i;
+              		  StackTrace::heapStopValue = (0x2000c000 - 4 * i);
               		  break;
               	  }
                 }
@@ -57,7 +57,7 @@ void StackTrace::clear()
 
 int StackTrace::getHeapDifference()
 {
-	return StackTrace::heapStopValue - StackTrace::heapStartValue;
+	return StackTrace::heapStopValue - StackTrace::heapStartValue + 4;
 }
 
 int StackTrace::getStackSizeDifference()
