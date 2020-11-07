@@ -53,25 +53,36 @@ public:
 	 */
 	void setstackB(int a);
 
+    /**
+    * @brief get Heap Pointer
+    * @return adress of Heappointer
+    */
+    int getHeapDifference();
+
 private:
 	/**
 	 * @brief set start value to zero
 	 */
 	void clear();
+
     /**
 	 * @brief get Stack Pointer with inline assembly, this function can only be used in get_StackPointer
 	 */
     int get_SP(void);
+
     /**
 	 * @brief get Stack Pointer, this function can be used
      * @return adress of Stackpointer
 	 */
     int getStackPointer(void);
+
     /**
-    	 * @brief get Heap Pointer
-         * @return adress of Heappointer
-    	 */
+    * @brief get Heap Pointer
+    * @return adress of Heappointer
+    */
     int getHeapPointer(void);
+
+
 
 	int stackStartValue;
 	int heapStartValue;
