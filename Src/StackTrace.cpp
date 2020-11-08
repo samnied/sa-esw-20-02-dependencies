@@ -8,18 +8,43 @@ StackTrace::StackTrace()
 }
 void StackTrace::start()
 {
-	clear();
-    StackTrace::stackStartValue = StackTrace::getCurrentStackSize();
-    StackTrace::heapStartValue = StackTrace::getHeapPointer();
-    for (int i =(0x20018000 - (StackTrace::stackStartValue + 0)); i >= StackTrace::heapStartValue; i = i-0x4)
-        {
-      	  //volatile unsigned int& UART0 = *((volatile unsigned int*)stackB);
-      	  volatile unsigned int& UART0CTL = *((volatile unsigned int*)i);
-      	  UART0CTL = 0xCD;
-        }
+	if (IAR = 0)	//solution for STMCubeIDE
+	{
+		clear();
+    	StackTrace::stackStartValue = StackTrace::getStackPointer();
+    	StackTrace::heapStartValue = StackTrace::getHeapPointer();
+    	for (int i = StackTrace::stackStartValue; i >= StackTrace::heapStartValue; i = i-0x4)
+        	{
+      	 	 //volatile unsigned int& UART0 = *((volatile unsigned int*)stackB);
+      	 	 volatile unsigned int& UART0CTL = *((volatile unsigned int*)i);
+      	 	 UART0CTL = 0xCD;
+       	 	}
+	}
+	else			//solution for IAR
+	{
+		clear();
+		StackTrace::stackStartValue = StackTrace::getStackPointer();
+    	StackTrace::heapStartValue = StackTrace::getHeapPointer();
+		for (int i = StackTrace::stackStartValue; i >= StackTrace::IARStackBase; i = i-0x4)
+        	{
+      	 	 //volatile unsigned int& UART0 = *((volatile unsigned int*)stackB);
+      	 	 volatile unsigned int& UART0CTL = *((volatile unsigned int*)i);
+      	 	 UART0CTL = 0xCD;
+       	 	}
+		for (int i = 0x20018000; i >= StackTrace::heapStartValue; i = i-0x4)
+        	{
+      	 	 //volatile unsigned int& UART0 = *((volatile unsigned int*)stackB);
+      	 	 volatile unsigned int& UART0CTL = *((volatile unsigned int*)i);
+      	 	 UART0CTL = 0xCD;
+       	 	}
+	}
+	
 }
 void StackTrace::stop()
 {
+	if (IAR = 0)	//solution for STMCubeIDE
+	{
+
     volatile unsigned int& UART0 = *((volatile unsigned int*)0x2000c000);
     //for Stack
       for (int i = 0x0000; i <= (0xc000 - StackTrace::stackStartValue); i = i + 0x1)
@@ -45,6 +70,36 @@ void StackTrace::stop()
               		  break;
               	  }
                 }
+	}
+	else			//solution for IAR
+	{
+    //for Stack
+      volatile unsigned int& UART0 = *((volatile unsigned int*)StackTrace::IARStackBase);	
+	  for (int i = 0x0000; i <= 0x18000; i = i + 0x1)
+          {
+        	  volatile unsigned int& UART0CTL = *(&UART0 + i);
+        	  unsigned int current;
+    		  current = UART0CTL;
+        	  if (current != 0xCD)
+        	  {
+        		  StackTrace::stackStopValue = (int)&UART0CTL;
+        		  break;
+        	  }
+          }
+      //for Heap
+	  UART0 = *((volatile unsigned int*)0x20018000);
+      for (int i = 0x0000; i <= (0x18000); i = i + 0x1)
+                {
+              	  volatile unsigned int& UART0CTL = *(&UART0 - i);
+              	  unsigned int current;
+          		  current = UART0CTL;
+              	  if (current != 0xCD)
+              	  {
+              		  StackTrace::heapStopValue = (int)&UART0CTL;
+              		  break;
+              	  }
+                }
+	}			
 }
 
 void StackTrace::clear()
@@ -92,7 +147,17 @@ int StackTrace::getStackPointer()
     int a = StackTrace::get_SP();
 }
 
-void StackTrace::setstackB(int a)
+void StackTrace::setstackB(int i)
 {
-	stackB = a;
+	StackTrace::stackB = i;
+}
+
+void StackTrace::setIARValue(int i)
+{
+	StackTrace::IAR = i;
+}
+
+void StackTrace::setIARStackBase(int i)
+{
+	StackTrace::IARStackBase = i;
 }
