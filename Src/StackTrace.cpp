@@ -87,7 +87,7 @@ void StackTrace::stop()
         	  }
           }
       //for Heap
-	  volatile unsigned int& UART0 = *((volatile unsigned int*)0x20018000);
+	  UART0 = *((volatile unsigned int*)0x20018000);
       for (int i = 0x0000; i <= (0x18000); i = i + 0x1)
                 {
               	  volatile unsigned int& UART0CTL = *(&UART0 - i);
