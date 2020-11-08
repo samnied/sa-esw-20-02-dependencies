@@ -1,9 +1,16 @@
-
+/*
+ * nfcallNE.h
+ *
+ *  Created on: 08.11.2020
+ *      Author: Samuel Niederer
+ *
+ *  Nested function calls with Exception Handling activated.
+ */
 void f99(int i)
 {
    throw 1;
 }
-void f98(int i) noexcept
+void f98(int i)
 {
    if(i == 98)
    {
@@ -11,7 +18,7 @@ void f98(int i) noexcept
    }
    f99(i);
 }
-void f97(int i) noexcept
+void f97(int i)
 {
    if(i == 97)
    {
@@ -19,7 +26,7 @@ void f97(int i) noexcept
    }
    f98(i);
 }
-void f96(int i) noexcept
+void f96(int i)
 {
    if(i == 96)
    {
@@ -27,7 +34,7 @@ void f96(int i) noexcept
    }
    f97(i);
 }
-void f95(int i) noexcept
+void f95(int i)
 {
    if(i == 95)
    {
@@ -35,7 +42,7 @@ void f95(int i) noexcept
    }
    f96(i);
 }
-void f94(int i) noexcept
+void f94(int i)
 {
    if(i == 94)
    {
@@ -43,7 +50,7 @@ void f94(int i) noexcept
    }
    f95(i);
 }
-void f93(int i) noexcept
+void f93(int i)
 {
    if(i == 93)
    {
@@ -51,7 +58,7 @@ void f93(int i) noexcept
    }
    f94(i);
 }
-void f92(int i) noexcept
+void f92(int i)
 {
    if(i == 92)
    {
@@ -59,7 +66,7 @@ void f92(int i) noexcept
    }
    f93(i);
 }
-void f91(int i) noexcept
+void f91(int i)
 {
    if(i == 91)
    {
@@ -67,7 +74,7 @@ void f91(int i) noexcept
    }
    f92(i);
 }
-void f90(int i) noexcept
+void f90(int i)
 {
    if(i == 90)
    {
@@ -75,7 +82,7 @@ void f90(int i) noexcept
    }
    f91(i);
 }
-void f89(int i) noexcept
+void f89(int i)
 {
    if(i == 89)
    {
@@ -83,7 +90,7 @@ void f89(int i) noexcept
    }
    f90(i);
 }
-void f88(int i) noexcept
+void f88(int i)
 {
    if(i == 88)
    {
@@ -91,7 +98,7 @@ void f88(int i) noexcept
    }
    f89(i);
 }
-void f87(int i) noexcept
+void f87(int i)
 {
    if(i == 87)
    {
@@ -99,7 +106,7 @@ void f87(int i) noexcept
    }
    f88(i);
 }
-void f86(int i) noexcept
+void f86(int i)
 {
    if(i == 86)
    {
@@ -107,7 +114,7 @@ void f86(int i) noexcept
    }
    f87(i);
 }
-void f85(int i) noexcept
+void f85(int i)
 {
    if(i == 85)
    {
@@ -115,7 +122,7 @@ void f85(int i) noexcept
    }
    f86(i);
 }
-void f84(int i) noexcept
+void f84(int i)
 {
    if(i == 84)
    {
@@ -123,7 +130,7 @@ void f84(int i) noexcept
    }
    f85(i);
 }
-void f83(int i) noexcept
+void f83(int i)
 {
    if(i == 83)
    {
@@ -131,7 +138,7 @@ void f83(int i) noexcept
    }
    f84(i);
 }
-void f82(int i) noexcept
+void f82(int i)
 {
    if(i == 82)
    {
@@ -139,7 +146,7 @@ void f82(int i) noexcept
    }
    f83(i);
 }
-void f81(int i) noexcept
+void f81(int i)
 {
    if(i == 81)
    {
@@ -147,7 +154,7 @@ void f81(int i) noexcept
    }
    f82(i);
 }
-void f80(int i) noexcept
+void f80(int i)
 {
    if(i == 80)
    {
@@ -155,7 +162,7 @@ void f80(int i) noexcept
    }
    f81(i);
 }
-void f79(int i) noexcept
+void f79(int i)
 {
    if(i == 79)
    {
@@ -163,7 +170,7 @@ void f79(int i) noexcept
    }
    f80(i);
 }
-void f78(int i) noexcept
+void f78(int i)
 {
    if(i == 78)
    {
@@ -171,7 +178,7 @@ void f78(int i) noexcept
    }
    f79(i);
 }
-void f77(int i) noexcept
+void f77(int i)
 {
    if(i == 77)
    {
@@ -179,7 +186,7 @@ void f77(int i) noexcept
    }
    f78(i);
 }
-void f76(int i) noexcept
+void f76(int i)
 {
    if(i == 76)
    {
@@ -187,7 +194,7 @@ void f76(int i) noexcept
    }
    f77(i);
 }
-void f75(int i) noexcept
+void f75(int i)
 {
    if(i == 75)
    {
@@ -195,7 +202,7 @@ void f75(int i) noexcept
    }
    f76(i);
 }
-void f74(int i) noexcept
+void f74(int i)
 {
    if(i == 74)
    {
@@ -203,7 +210,7 @@ void f74(int i) noexcept
    }
    f75(i);
 }
-void f73(int i) noexcept
+void f73(int i)
 {
    if(i == 73)
    {
@@ -211,7 +218,7 @@ void f73(int i) noexcept
    }
    f74(i);
 }
-void f72(int i) noexcept
+void f72(int i)
 {
    if(i == 72)
    {
@@ -219,7 +226,7 @@ void f72(int i) noexcept
    }
    f73(i);
 }
-void f71(int i) noexcept
+void f71(int i)
 {
    if(i == 71)
    {
@@ -227,7 +234,7 @@ void f71(int i) noexcept
    }
    f72(i);
 }
-void f70(int i) noexcept
+void f70(int i)
 {
    if(i == 70)
    {
@@ -235,7 +242,7 @@ void f70(int i) noexcept
    }
    f71(i);
 }
-void f69(int i) noexcept
+void f69(int i)
 {
    if(i == 69)
    {
@@ -243,7 +250,7 @@ void f69(int i) noexcept
    }
    f70(i);
 }
-void f68(int i) noexcept
+void f68(int i)
 {
    if(i == 68)
    {
@@ -251,7 +258,7 @@ void f68(int i) noexcept
    }
    f69(i);
 }
-void f67(int i) noexcept
+void f67(int i)
 {
    if(i == 67)
    {
@@ -259,7 +266,7 @@ void f67(int i) noexcept
    }
    f68(i);
 }
-void f66(int i) noexcept
+void f66(int i)
 {
    if(i == 66)
    {
@@ -267,7 +274,7 @@ void f66(int i) noexcept
    }
    f67(i);
 }
-void f65(int i) noexcept
+void f65(int i)
 {
    if(i == 65)
    {
@@ -275,7 +282,7 @@ void f65(int i) noexcept
    }
    f66(i);
 }
-void f64(int i) noexcept
+void f64(int i)
 {
    if(i == 64)
    {
@@ -283,7 +290,7 @@ void f64(int i) noexcept
    }
    f65(i);
 }
-void f63(int i) noexcept
+void f63(int i)
 {
    if(i == 63)
    {
@@ -291,7 +298,7 @@ void f63(int i) noexcept
    }
    f64(i);
 }
-void f62(int i) noexcept
+void f62(int i)
 {
    if(i == 62)
    {
@@ -299,7 +306,7 @@ void f62(int i) noexcept
    }
    f63(i);
 }
-void f61(int i) noexcept
+void f61(int i)
 {
    if(i == 61)
    {
@@ -307,7 +314,7 @@ void f61(int i) noexcept
    }
    f62(i);
 }
-void f60(int i) noexcept
+void f60(int i)
 {
    if(i == 60)
    {
@@ -315,7 +322,7 @@ void f60(int i) noexcept
    }
    f61(i);
 }
-void f59(int i) noexcept
+void f59(int i)
 {
    if(i == 59)
    {
@@ -323,7 +330,7 @@ void f59(int i) noexcept
    }
    f60(i);
 }
-void f58(int i) noexcept
+void f58(int i)
 {
    if(i == 58)
    {
@@ -331,7 +338,7 @@ void f58(int i) noexcept
    }
    f59(i);
 }
-void f57(int i) noexcept
+void f57(int i)
 {
    if(i == 57)
    {
@@ -339,7 +346,7 @@ void f57(int i) noexcept
    }
    f58(i);
 }
-void f56(int i) noexcept
+void f56(int i)
 {
    if(i == 56)
    {
@@ -347,7 +354,7 @@ void f56(int i) noexcept
    }
    f57(i);
 }
-void f55(int i) noexcept
+void f55(int i)
 {
    if(i == 55)
    {
@@ -355,7 +362,7 @@ void f55(int i) noexcept
    }
    f56(i);
 }
-void f54(int i) noexcept
+void f54(int i)
 {
    if(i == 54)
    {
@@ -363,7 +370,7 @@ void f54(int i) noexcept
    }
    f55(i);
 }
-void f53(int i) noexcept
+void f53(int i)
 {
    if(i == 53)
    {
@@ -371,7 +378,7 @@ void f53(int i) noexcept
    }
    f54(i);
 }
-void f52(int i) noexcept
+void f52(int i)
 {
    if(i == 52)
    {
@@ -379,7 +386,7 @@ void f52(int i) noexcept
    }
    f53(i);
 }
-void f51(int i) noexcept
+void f51(int i)
 {
    if(i == 51)
    {
@@ -387,7 +394,7 @@ void f51(int i) noexcept
    }
    f52(i);
 }
-void f50(int i) noexcept
+void f50(int i)
 {
    if(i == 50)
    {
@@ -395,7 +402,7 @@ void f50(int i) noexcept
    }
    f51(i);
 }
-void f49(int i) noexcept
+void f49(int i)
 {
    if(i == 49)
    {
@@ -403,7 +410,7 @@ void f49(int i) noexcept
    }
    f50(i);
 }
-void f48(int i) noexcept
+void f48(int i)
 {
    if(i == 48)
    {
@@ -411,7 +418,7 @@ void f48(int i) noexcept
    }
    f49(i);
 }
-void f47(int i) noexcept
+void f47(int i)
 {
    if(i == 47)
    {
@@ -419,7 +426,7 @@ void f47(int i) noexcept
    }
    f48(i);
 }
-void f46(int i) noexcept
+void f46(int i)
 {
    if(i == 46)
    {
@@ -427,7 +434,7 @@ void f46(int i) noexcept
    }
    f47(i);
 }
-void f45(int i) noexcept
+void f45(int i)
 {
    if(i == 45)
    {
@@ -435,7 +442,7 @@ void f45(int i) noexcept
    }
    f46(i);
 }
-void f44(int i) noexcept
+void f44(int i)
 {
    if(i == 44)
    {
@@ -443,7 +450,7 @@ void f44(int i) noexcept
    }
    f45(i);
 }
-void f43(int i) noexcept
+void f43(int i)
 {
    if(i == 43)
    {
@@ -451,7 +458,7 @@ void f43(int i) noexcept
    }
    f44(i);
 }
-void f42(int i) noexcept
+void f42(int i)
 {
    if(i == 42)
    {
@@ -459,7 +466,7 @@ void f42(int i) noexcept
    }
    f43(i);
 }
-void f41(int i) noexcept
+void f41(int i)
 {
    if(i == 41)
    {
@@ -467,7 +474,7 @@ void f41(int i) noexcept
    }
    f42(i);
 }
-void f40(int i) noexcept
+void f40(int i)
 {
    if(i == 40)
    {
@@ -475,7 +482,7 @@ void f40(int i) noexcept
    }
    f41(i);
 }
-void f39(int i) noexcept
+void f39(int i)
 {
    if(i == 39)
    {
@@ -483,7 +490,7 @@ void f39(int i) noexcept
    }
    f40(i);
 }
-void f38(int i) noexcept
+void f38(int i)
 {
    if(i == 38)
    {
@@ -491,7 +498,7 @@ void f38(int i) noexcept
    }
    f39(i);
 }
-void f37(int i) noexcept
+void f37(int i)
 {
    if(i == 37)
    {
@@ -499,7 +506,7 @@ void f37(int i) noexcept
    }
    f38(i);
 }
-void f36(int i) noexcept
+void f36(int i)
 {
    if(i == 36)
    {
@@ -507,7 +514,7 @@ void f36(int i) noexcept
    }
    f37(i);
 }
-void f35(int i) noexcept
+void f35(int i)
 {
    if(i == 35)
    {
@@ -515,7 +522,7 @@ void f35(int i) noexcept
    }
    f36(i);
 }
-void f34(int i) noexcept
+void f34(int i)
 {
    if(i == 34)
    {
@@ -523,7 +530,7 @@ void f34(int i) noexcept
    }
    f35(i);
 }
-void f33(int i) noexcept
+void f33(int i)
 {
    if(i == 33)
    {
@@ -531,7 +538,7 @@ void f33(int i) noexcept
    }
    f34(i);
 }
-void f32(int i) noexcept
+void f32(int i)
 {
    if(i == 32)
    {
@@ -539,7 +546,7 @@ void f32(int i) noexcept
    }
    f33(i);
 }
-void f31(int i) noexcept
+void f31(int i)
 {
    if(i == 31)
    {
@@ -547,7 +554,7 @@ void f31(int i) noexcept
    }
    f32(i);
 }
-void f30(int i) noexcept
+void f30(int i)
 {
    if(i == 30)
    {
@@ -555,7 +562,7 @@ void f30(int i) noexcept
    }
    f31(i);
 }
-void f29(int i) noexcept
+void f29(int i)
 {
    if(i == 29)
    {
@@ -563,7 +570,7 @@ void f29(int i) noexcept
    }
    f30(i);
 }
-void f28(int i) noexcept
+void f28(int i)
 {
    if(i == 28)
    {
@@ -571,7 +578,7 @@ void f28(int i) noexcept
    }
    f29(i);
 }
-void f27(int i) noexcept
+void f27(int i)
 {
    if(i == 27)
    {
@@ -579,7 +586,7 @@ void f27(int i) noexcept
    }
    f28(i);
 }
-void f26(int i) noexcept
+void f26(int i)
 {
    if(i == 26)
    {
@@ -587,7 +594,7 @@ void f26(int i) noexcept
    }
    f27(i);
 }
-void f25(int i) noexcept
+void f25(int i)
 {
    if(i == 25)
    {
@@ -595,7 +602,7 @@ void f25(int i) noexcept
    }
    f26(i);
 }
-void f24(int i) noexcept
+void f24(int i)
 {
    if(i == 24)
    {
@@ -603,7 +610,7 @@ void f24(int i) noexcept
    }
    f25(i);
 }
-void f23(int i) noexcept
+void f23(int i)
 {
    if(i == 23)
    {
@@ -611,7 +618,7 @@ void f23(int i) noexcept
    }
    f24(i);
 }
-void f22(int i) noexcept
+void f22(int i)
 {
    if(i == 22)
    {
@@ -619,7 +626,7 @@ void f22(int i) noexcept
    }
    f23(i);
 }
-void f21(int i) noexcept
+void f21(int i)
 {
    if(i == 21)
    {
@@ -627,7 +634,7 @@ void f21(int i) noexcept
    }
    f22(i);
 }
-void f20(int i) noexcept
+void f20(int i)
 {
    if(i == 20)
    {
@@ -635,7 +642,7 @@ void f20(int i) noexcept
    }
    f21(i);
 }
-void f19(int i) noexcept
+void f19(int i)
 {
    if(i == 19)
    {
@@ -643,7 +650,7 @@ void f19(int i) noexcept
    }
    f20(i);
 }
-void f18(int i) noexcept
+void f18(int i)
 {
    if(i == 18)
    {
@@ -651,7 +658,7 @@ void f18(int i) noexcept
    }
    f19(i);
 }
-void f17(int i) noexcept
+void f17(int i)
 {
    if(i == 17)
    {
@@ -659,7 +666,7 @@ void f17(int i) noexcept
    }
    f18(i);
 }
-void f16(int i) noexcept
+void f16(int i)
 {
    if(i == 16)
    {
@@ -667,7 +674,7 @@ void f16(int i) noexcept
    }
    f17(i);
 }
-void f15(int i) noexcept
+void f15(int i)
 {
    if(i == 15)
    {
@@ -675,7 +682,7 @@ void f15(int i) noexcept
    }
    f16(i);
 }
-void f14(int i) noexcept
+void f14(int i)
 {
    if(i == 14)
    {
@@ -683,7 +690,7 @@ void f14(int i) noexcept
    }
    f15(i);
 }
-void f13(int i) noexcept
+void f13(int i)
 {
    if(i == 13)
    {
@@ -691,7 +698,7 @@ void f13(int i) noexcept
    }
    f14(i);
 }
-void f12(int i) noexcept
+void f12(int i)
 {
    if(i == 12)
    {
@@ -699,7 +706,7 @@ void f12(int i) noexcept
    }
    f13(i);
 }
-void f11(int i) noexcept
+void f11(int i)
 {
    if(i == 11)
    {
@@ -707,7 +714,7 @@ void f11(int i) noexcept
    }
    f12(i);
 }
-void f10(int i) noexcept
+void f10(int i)
 {
    if(i == 10)
    {
@@ -715,7 +722,7 @@ void f10(int i) noexcept
    }
    f11(i);
 }
-void f9(int i) noexcept
+void f9(int i)
 {
    if(i == 9)
    {
@@ -723,7 +730,7 @@ void f9(int i) noexcept
    }
    f10(i);
 }
-void f8(int i) noexcept
+void f8(int i)
 {
    if(i == 8)
    {
@@ -731,7 +738,7 @@ void f8(int i) noexcept
    }
    f9(i);
 }
-void f7(int i) noexcept
+void f7(int i)
 {
    if(i == 7)
    {
@@ -739,7 +746,7 @@ void f7(int i) noexcept
    }
    f8(i);
 }
-void f6(int i) noexcept
+void f6(int i)
 {
    if(i == 6)
    {
@@ -747,7 +754,7 @@ void f6(int i) noexcept
    }
    f7(i);
 }
-void f5(int i) noexcept
+void f5(int i)
 {
    if(i == 5)
    {
@@ -755,7 +762,7 @@ void f5(int i) noexcept
    }
    f6(i);
 }
-void f4(int i) noexcept
+void f4(int i)
 {
    if(i == 4)
    {
@@ -763,7 +770,7 @@ void f4(int i) noexcept
    }
    f5(i);
 }
-void f3(int i) noexcept
+void f3(int i)
 {
    if(i == 3)
    {
@@ -771,7 +778,7 @@ void f3(int i) noexcept
    }
    f4(i);
 }
-void f2(int i) noexcept
+void f2(int i)
 {
    if(i == 2)
    {
@@ -779,7 +786,7 @@ void f2(int i) noexcept
    }
    f3(i);
 }
-void f1(int i) noexcept
+void f1(int i)
 {
    if(i == 1)
    {
@@ -787,7 +794,7 @@ void f1(int i) noexcept
    }
    f2(i);
 }
-void f0(int i) noexcept
+void f0(int i)
 {
    if(i == 0)
    {
