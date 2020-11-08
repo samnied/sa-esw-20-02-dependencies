@@ -51,13 +51,23 @@ public:
 	/**
 	 * @brief set stackB
 	 */
-	void setstackB(int a);
+	void setstackB(int i);
 
     /**
     * @brief get Heap Pointer
     * @return adress of Heappointer
     */
     int getHeapDifference();
+
+	/**
+    * @brief set the IAR value (if IAR is used set to one, else set to 0) (should only be used for bugfixing, will later be done with GDB)
+    */
+    void setIARValue(int i);
+
+	/**
+    * @brief set the IARStackBase value (can be read from .out file)(should only be used for bugfixing, will later be done with GDB)
+    */
+	void StackTrace::setIARStackBase(int i);
 
 private:
 	/**
@@ -82,8 +92,8 @@ private:
     */
     int getHeapPointer(void);
 
-
-
+	volatile int IARStackBase;	//volatile ensures that it is not optimised away (because it will be set from the GDB)
+	volatile int IAR = 0;		//volatile ensures that it is not optimised away (because it will be set from the GDB)
 	int stackStartValue;
 	int heapStartValue;
     int stackStopValue;
