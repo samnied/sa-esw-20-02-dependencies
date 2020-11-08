@@ -67,7 +67,7 @@ public:
 	/**
     * @brief set the IARStackBase value (can be read from .out file)(should only be used for bugfixing, will later be done with GDB)
     */
-	void StackTrace::setIARStackBase(int i);
+	void setIARStackBase(int i);
 
 private:
 	/**
