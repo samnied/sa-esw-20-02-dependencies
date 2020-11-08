@@ -8,7 +8,7 @@ StackTrace::StackTrace()
 }
 void StackTrace::start()
 {
-	if (IAR = 0)	//solution for STMCubeIDE
+	if (IAR == 0)	//solution for STMCubeIDE
 	{
 		clear();
     	StackTrace::stackStartValue = StackTrace::getStackPointer();
@@ -42,7 +42,7 @@ void StackTrace::start()
 }
 void StackTrace::stop()
 {
-	if (IAR = 0)	//solution for STMCubeIDE
+	if (IAR == 0)	//solution for STMCubeIDE
 	{
 
     volatile unsigned int& UART0 = *((volatile unsigned int*)0x2000c000);
