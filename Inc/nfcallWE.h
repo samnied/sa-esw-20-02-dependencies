@@ -6,6 +6,9 @@
  *
  *  Nested function calls with Exception Handling activated.
  */
+#ifndef NFCALLWE_H
+#define NFCALLWE_H
+
 void f99(int i)
 {
    throw 1;
@@ -802,3 +805,5 @@ void f0(int i)
    }
    f1(i);
 }
+
+#endif
