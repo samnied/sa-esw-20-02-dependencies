@@ -42,8 +42,8 @@ void StackTrace::start()
 }
 void StackTrace::stop()
 {
-	if (IAR == 0)	//solution for STMCubeIDE
-	{
+  if (IAR == 0)	//solution for STMCubeIDE
+  {
 
     volatile unsigned int& UART0 = *((volatile unsigned int*)0x2000c000);
     //for Stack
@@ -87,15 +87,15 @@ void StackTrace::stop()
         	  }
           }
       //for Heap
-	  UART0 = *((volatile unsigned int*)0x20018000);
+      volatile unsigned int& UART1 = *((volatile unsigned int*)StackTrace::IARHeapLimit);
       for (int i = 0x0000; i <= (0x18000); i = i + 0x1)
                 {
-              	  volatile unsigned int& UART0CTL = *(&UART0 - i);
+              	  volatile unsigned int& UART1CTL = *(&UART1 - i);
               	  unsigned int current;
-          		  current = UART0CTL;
+          		  current = UART1CTL;
               	  if (current != 0xCD)
               	  {
-              		  StackTrace::heapStopValue = (int)&UART0CTL;
+              		  StackTrace::heapStopValue = (int)&UART1CTL;
               		  break;
               	  }
                 }
