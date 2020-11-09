@@ -6,8 +6,8 @@
  *
  *  Nested function calls without Exception Handling
  */
-#ifndef GDBLOG_H
-#define GDBLOG_H
+#ifndef NFCALLNE_H
+#define NFCALLNE_H
 
 void f99(int i)
 {
