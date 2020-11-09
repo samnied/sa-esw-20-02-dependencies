@@ -69,6 +69,11 @@ public:
     */
 	void setIARStackBase(int i);
 
+	/**
+    * @brief set the IARHeapLimit value (can be read from .out file)(should only be used for bugfixing, will later be done with GDB)
+    */
+	void setIARHeapLimit(int i);
+
 private:
 	/**
 	 * @brief set start value to zero
@@ -93,6 +98,7 @@ private:
     int getHeapPointer(void);
 
 	volatile int IARStackBase;	//volatile ensures that it is not optimised away (because it will be set from the GDB)
+	volatile int IARHeapLimit;	//volatile ensures that it is not optimised away (because it will be set from the GDB)
 	volatile int IAR = 0;		//volatile ensures that it is not optimised away (because it will be set from the GDB)
 	int stackStartValue;
 	int heapStartValue;
