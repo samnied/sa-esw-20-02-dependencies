@@ -73,17 +73,17 @@ void StackTrace::stop()
 	}
 	else			//solution for IAR
 	{
-    //for Stack
-      volatile unsigned int& UART0 = *((volatile unsigned int*)StackTrace::IARStackBase);	
-	  for (int i = 0x0000; i <= 0x18000; i = i + 0x1)
-          {
-        	  volatile unsigned int& UART0CTL = *(&UART0 + i);
-        	  unsigned int current;
-    		  current = UART0CTL;
-        	  if (current != 0xCD)
-        	  {
-        		  StackTrace::stackStopValue = (int)&UART0CTL;
-        		  break;
+        //for Stack
+        volatile unsigned int& UART0 = *((volatile unsigned int*)StackTrace::IARStackBase);	
+	for (int i = 0x0000; i <= 0x18000; i = i + 0x1)
+        {
+        	 volatile unsigned int& UART0CTL = *(&UART0 + i);
+        	 unsigned int current;
+    		 current = UART0CTL;
+        	 if (current != 0xCD)
+        	 {
+                      StackTrace::stackStopValue = (int)&UART0CTL;
+                      break;
         	  }
           }
       //for Heap
