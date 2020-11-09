@@ -99,7 +99,7 @@ private:
 
 	volatile int IARStackBase;	//volatile ensures that it is not optimised away (because it will be set from the GDB)
 	volatile int IARHeapLimit;	//volatile ensures that it is not optimised away (because it will be set from the GDB)
-	volatile int IAR = 0;		//volatile ensures that it is not optimised away (because it will be set from the GDB)
+	volatile int IAR;		//volatile ensures that it is not optimised away (because it will be set from the GDB)
 	int stackStartValue;
 	int heapStartValue;
     int stackStopValue;
