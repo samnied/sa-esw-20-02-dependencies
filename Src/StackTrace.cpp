@@ -117,7 +117,7 @@ int StackTrace::getHeapDifference()
 
 int StackTrace::getStackSizeDifference()
 {
-	return StackTrace::stackStopValue - StackTrace::stackStartValue;
+	return StackTrace::stackStartValue - StackTrace::stackStopValue;
 }
 
 int StackTrace::getCurrentStackSize()
