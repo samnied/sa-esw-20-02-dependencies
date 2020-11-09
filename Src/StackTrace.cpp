@@ -25,7 +25,7 @@ void StackTrace::start()
 		clear();
 		StackTrace::stackStartValue = StackTrace::getStackPointer();
     	StackTrace::heapStartValue = StackTrace::getHeapPointer();
-		for (int i = StackTrace::stackStartValue; i > StackTrace::IARStackBase; i = i-0x4)
+		for (int i = StackTrace::stackStartValue - 0x4; i > StackTrace::IARStackBase; i = i - 0x4)
         	{
       	 	 //volatile unsigned int& UART0 = *((volatile unsigned int*)stackB);
       	 	 volatile unsigned int& UART0CTL = *((volatile unsigned int*)i);
