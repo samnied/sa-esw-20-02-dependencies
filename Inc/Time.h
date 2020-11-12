@@ -3,7 +3,6 @@
  *
  *  Created on: 28.10.2020
  *      Author: Samuel Niederer
- *      Another comment for git check
  */
 #ifndef TIME_H
 #define TIME_H
