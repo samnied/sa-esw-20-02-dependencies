@@ -3,7 +3,7 @@
  *
  *  Created on: 28.10.2020
  *      Author: Samuel Niederer
- *      Add a comment to test git submodule
+ *       Add a comment to test git submodule
  */
 #ifndef TIME_H
 #define TIME_H
