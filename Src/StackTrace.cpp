@@ -144,7 +144,7 @@ int StackTrace::get_SP()
 
 int StackTrace::getStackPointer()
 {
-    volatile int a = StackTrace::get_SP();
+    int a = StackTrace::get_SP();
 }
 
 void StackTrace::setstackB(int i)
