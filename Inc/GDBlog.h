@@ -36,13 +36,13 @@ public:
 private:
 	enum{size = 100};
 
-	int tBuff[size];
-	int sBuff[size];
-	int hBuff[size];
+	volatile int tBuff[size];
+	volatile int sBuff[size];
+	volatile int hBuff[size];
 
-	int tIndex;
-	int sIndex;
-	int hIndex;
+	volatile int tIndex;
+	volatile int sIndex;
+	volatile int hIndex;
 
 	volatile int i;
 };
