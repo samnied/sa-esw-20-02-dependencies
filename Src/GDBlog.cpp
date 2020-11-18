@@ -1,5 +1,7 @@
 #include "../Inc/GDBlog.h"
 
+#pragma GCC optimize ("0")
+
 GDBlog::GDBlog():tIndex(0), sIndex(0), hIndex(0)
 {}
 
