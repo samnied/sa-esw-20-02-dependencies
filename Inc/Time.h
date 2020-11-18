@@ -53,7 +53,7 @@ private:
 	 * @brief set cycle counter to zero
 	 */
 	void clear();
-	uint32_t offset;
+	uint32_t offset = 0;
 };
 
 #endif

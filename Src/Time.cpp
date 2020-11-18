@@ -5,7 +5,7 @@ Time::Time()
 {
 	// disable all interrupts to avoid a corruption of the
 	// measurement by an occurrence of an interrupt
-	offset = 0;
+	//offset = 0;
 	__disable_irq();
 	enableDWT();
 	start();
