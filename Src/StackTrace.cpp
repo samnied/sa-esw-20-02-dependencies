@@ -1,6 +1,8 @@
 #include "../Inc/StackTrace.h"
 #include <stdlib.h>
 
+#pragma GCC optimize ("0")
+
 StackTrace::StackTrace()
 {
 	// disable all interrupts to avoid a corruption of the
