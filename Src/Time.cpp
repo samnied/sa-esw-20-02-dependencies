@@ -1,6 +1,8 @@
 #include "../Inc/Time.h"
 #include "stm32l4xx_hal.h"
 
+#pragma GCC optimize ("0")
+
 Time::Time()
 {
 	// disable all interrupts to avoid a corruption of the
