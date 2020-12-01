@@ -21,7 +21,7 @@ public:
 	GDBlog();
 
 	/**
-	 * @brief starts the cycle counter
+	 * @brief stores val to an internal array
 	 * @param val value to log
 	 * @param t type of data (time, stack, heap)
 	 */
